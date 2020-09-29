@@ -1,49 +1,31 @@
 <!DOCTYPE html>
-<html>
+
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="index.css">
 </head>
 <body>
 
-    <h1>Tabs</h1>
-    
-    <div class="tab">
-      <button class="tablinks" onclick="openTab(event, 'TabOne')">Tab1</button>
-      <button class="tablinks" onclick="openTab(event, 'TabTwo')">Tab2</button>
-      <button class="tablinks" onclick="openTab(event, 'TabThree')">Tab3</button>
+    <h1>TABS</h1>
+    <div class="tabs">
+    <div class="tabs__navbar">
+    <button class="tabs__button tabs__button--active" data-for-tab="1" >TabOne</button>
+    <button class="tabs__button" data-for-tab="2" >TabTwo</button>
+    <button class="tabs__button" data-for-tab="3">TabThree</button>
     </div>
-    
-    <div id="London" class="tabDisplay">
-      <h3>TabOne</h3>
-      <p>This is Tab one</p>
+      <div class="tabs__content tabs__content--active" data-tab="1">
+          <h2>Tab One</h2>
+          <p>This is page one</p>
+      </div>
+      <div class="tabs__content" data-tab="2">
+        <h2>Tab Two</h2>
+        <p>This is page on two</p>
     </div>
-    
-    <div id="Paris" class="tabDisplay">
-      <h3>TabTwo</h3>
-      <p>This is Tab two</p> 
+    <div class="tabs__content" data-tab="3">
+        <h2>Tab Three</h2>
+        <p>This is page three</p>
     </div>
-    
-    <div id="Tokyo" class="tabDisplay">
-      <h3>TabThree</h3>
-      <p>This is Tab three</p>
     </div>
-    
-    <script>
-    function openTab(evt, tabType) {
-      var i, tabDisplay, tablinks;
-      tabDisplay = document.getElementsByClassName("tabDisplay");
-      for (i = 0; i < tabDisplay.length; i++) {
-        tabDisplay[i].style.display = "none";
-      }
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-      document.getElementById(tabType).style.display = "block";
-      evt.currentTarget.className += " active";
-    }
-    </script>
-    
-   
+
+
 </body>
-</html> 
